@@ -1,0 +1,672 @@
+{
+    "type": "carousel",
+    "contents": [
+        {
+            "type": "bubble",
+            "size": "mega",
+            "hero": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://i.imgur.com/i8ClcWx.png",
+                        "size": "240px",
+                        "aspectRatio": "10:4"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#FCAF17"
+                    }
+                ],
+                "height": "100px"
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "lg",
+                "action": {
+                    "type": "uri",
+                    "uri": "https://linecorp.com"
+                },
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "ชั้น 1 ซ่อมห้าง",
+                                "size": "14px",
+                                "color": "#616161",
+                                "weight": "bold",
+                                "style": "normal"
+                            }
+                        ],
+                        "offsetStart": "md"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "spacing": "md",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "เลขกรมธรรม์",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "cust_first_name",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#0033A2",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "ผู้เอาประกันภัย",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "cust_first_name cust_last_name",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "ทะเบียนรถ",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "ทะเบียนรถ",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "วันที่เริ่มคุ้มครอง",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "pol_start_date",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "วันที่หมดอายุ",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "pol_end_date",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "สถานะกรมธรรม์",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "คุ้มครอง",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "height": "150px",
+                        "offsetStart": "md"
+                    }
+                ],
+                "paddingTop": "xl"
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "แจ้งเคลม",
+                                "size": "14px",
+                                "weight": "regular",
+                                "color": "#FFFFFF",
+                                "margin": "none",
+                                "action": {
+                                    "type": "phone",
+                                    "number": "+06222982456"
+                                }
+                            }
+                        ],
+                        "height": "36px",
+                        "width": "240px",
+                        "backgroundColor": "#0033A2",
+                        "cornerRadius": "8px",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "margin": "md",
+                        "offsetStart": "xxl",
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                        }
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "ดูกรมธรรม์",
+                                "size": "14px",
+                                "weight": "regular",
+                                "color": "#FFFFFF",
+                                "margin": "none",
+                                "action": {
+                                    "type": "uri",
+                                    "label": "action",
+                                    "uri": "http://linecorp.com/"
+                                }
+                            }
+                        ],
+                        "height": "36px",
+                        "width": "240px",
+                        "backgroundColor": "#0033A2",
+                        "cornerRadius": "8px",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "margin": "lg",
+                        "offsetStart": "xxl",
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                        }
+                    }
+                ],
+                "flex": 0,
+                "height": "130px"
+            }
+        },
+        {
+            "type": "bubble",
+            "size": "mega",
+            "hero": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://i.imgur.com/a1SCtg0.png",
+                        "size": "240px",
+                        "aspectRatio": "10:4"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#FCAF17"
+                    }
+                ],
+                "height": "100px"
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "lg",
+                "action": {
+                    "type": "uri",
+                    "uri": "https://linecorp.com"
+                },
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "อุ่นใจรักษ์",
+                                "size": "14px",
+                                "color": "#616161",
+                                "weight": "bold",
+                                "style": "normal"
+                            }
+                        ],
+                        "offsetStart": "md"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "spacing": "md",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "เลขกรมธรรม์",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "pol_id",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#0033A2",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "ผู้เอาประกันภัย",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "cust_first_name cust_last_name",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "แผน",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "1",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "วันที่เริ่มคุ้มครอง",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "pol_start_date",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "วันที่หมดอายุ",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "pol_end_date",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "สถานะกรมธรรม์",
+                                                "flex": 0,
+                                                "size": "12px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "คุ้มครอง",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "height": "150px",
+                        "offsetStart": "md"
+                    }
+                ],
+                "paddingTop": "xl"
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "แจ้งเคลม",
+                                "size": "14px",
+                                "weight": "regular",
+                                "color": "#FFFFFF",
+                                "margin": "none",
+                                "action": {
+                                    "type": "uri",
+                                    "label": "action",
+                                    "uri": "http://linecorp.com/"
+                                }
+                            }
+                        ],
+                        "height": "36px",
+                        "width": "240px",
+                        "backgroundColor": "#0033A2",
+                        "cornerRadius": "8px",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "margin": "md",
+                        "offsetStart": "xxl",
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                        }
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "ดูกรมธรรม์",
+                                "size": "14px",
+                                "weight": "regular",
+                                "color": "#FFFFFF",
+                                "margin": "none",
+                                "action": {
+                                    "type": "uri",
+                                    "label": "action",
+                                    "uri": "http://linecorp.com/"
+                                }
+                            }
+                        ],
+                        "height": "36px",
+                        "width": "240px",
+                        "backgroundColor": "#0033A2",
+                        "cornerRadius": "8px",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "margin": "lg",
+                        "offsetStart": "xxl",
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                        }
+                    }
+                ],
+                "flex": 0,
+                "height": "130px"
+            }
+        }
+    ]
+}

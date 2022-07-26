@@ -1,0 +1,2874 @@
+node.warn(msg.payload);
+// msg.payload.messages[0].contents.body.contents[3].contents[0].contents[1].text = "1220700050221";
+
+if (msg.payload.messages) {
+    node.warn(msg.payload.messages);
+    msg.payload.messages.forEach((messages) => {
+        node.error(messages.type);
+        if (messages.type == "video") {
+            trans_video(messages);
+        } else if (messages.type == "flex") {
+            const check_catalogue =
+                messages.contents &&
+                messages.contents.contents &&
+                messages.contents.contents[0] &&
+                messages.contents.contents[0].body &&
+                messages.contents.contents[0].body.contents &&
+                messages.contents.contents[0].body.contents[1] &&
+                messages.contents.contents[0].body.contents[1].text
+                    ? messages.contents.contents[0].body.contents[1].text.split(
+                          "|"
+                      )
+                    : "";
+            if (
+                check_catalogue[0] &&
+                check_catalogue[0] === "claim and view policy"
+            ) {
+                node.warn(1);
+                claim_and_view_policy_flex(messages);
+            } else if (
+                check_catalogue[0] &&
+                check_catalogue[0] === "renewal claim and view policy"
+            ) {
+                node.warn(2);
+                renewal_claim_and_view_policy_flex(messages);
+            } else if (
+                check_catalogue[0] &&
+                check_catalogue[0] === "renewal and view policy"
+            ) {
+                node.warn(3);
+                renewal_and_view_policy_flex(messages);
+            } else if (
+                check_catalogue[0] &&
+                check_catalogue[0] === "view policy"
+            ) {
+                node.warn(4);
+                view_policy_flex(messages);
+            }
+        } else if (messages.type == "text") {
+            const getData = messages.text.split("|");
+            if (getData[0] === "Products") {
+                trans_text_to_flex(messages);
+            }
+        }
+    });
+    msg.backup_payload = JSON.parse(JSON.stringify(msg.payload));
+} else {
+    node.error("Have no message");
+}
+return msg;
+
+function claim_and_view_policy_flex(message) {
+    let newDataContent = new Array();
+    let data = message.contents.contents;
+    // node.warn(pol_voluntary_plateno);
+    for (let i = 0; i < data.length; i++) {
+        let type = data[i].body.contents[0].text || "";
+        let pol_name = (data[i].body.contents[1].text.split("|")[1] || "").split( ":");
+        let pol_id = (data[i].body.contents[1].text.split("|")[2] || "").split(":");
+        let pol_first_name = (data[i].body.contents[1].text.split("|")[3] || "").split(":");
+        let pol_last_name = (data[i].body.contents[1].text.split("|")[4] || "").split(":");
+        let pol_valuntary_plateno = (data[i].body.contents[1].text.split("|")[5] || "").split(":");
+        let pol_type = (data[i].body.contents[1].text.split("|")[6] || "").split(":");
+        let pol_start_date = (data[i].body.contents[1].text.split("|")[7] || "").split(":");
+        let pol_end_date = (data[i].body.contents[1].text.split("|")[8] || "").split(":");
+        let pol_status_active = (data[i].body.contents[1].text.split("|")[9] || "").split(":");
+        let pol_voluntary_plateno = (data[0].body.contents[1].text.split("|")[10] || "").split(":");
+        let btn = data[i].footer.contents[0].action.label;
+        let url = data[i].footer.contents[0].action.uri;
+        
+        let startDate = pol_start_date[1].substr(0, 10);
+        let sDate = startDate.split("-").reverse().join("/");
+        let split_date = sDate.split("/");
+        let dateStart = split_date[2] + "/" + split_date[1]+ "/" + split_date[0];
+        
+        let end_date = pol_end_date[1].substr(0, 10);
+        let eDate = end_date.split("-").reverse().join("/");
+        let split_end_date = eDate.split("/");
+        let endDate = split_end_date[2] + "/" + split_end_date[1]+ "/" + split_end_date[0];
+        
+        if (pol_type === "MC") {
+            let bodyContent = {
+                type: "bubble",
+                size: "mega",
+                hero: {
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
+                        {
+                            type: "image",
+                            url: "https://i.imgur.com/i8ClcWx.png",
+                            size: "240px",
+                            aspectRatio: "10:4",
+                        },
+                        {
+                            type: "separator",
+                            color: "#FCAF17",
+                        },
+                    ],
+                    height: "100px",
+                },
+                body: {
+                    type: "box",
+                    layout: "vertical",
+                    spacing: "lg",
+                    action: {
+                        type: "uri",
+                        uri: "https://linecorp.com",
+                    },
+                    contents: [
+                        {
+                            type: "box",
+                            layout: "vertical",
+                            contents: [
+                                {
+                                    type: "text",
+                                    text: `${pol_name[1]}`,
+                                    size: "14px",
+                                    color: "#616161",
+                                    weight: "bold",
+                                    style: "normal",
+                                },
+                            ],
+                            offsetStart: "xs",
+                        },
+                        {
+                            type: "box",
+                            layout: "vertical",
+                            spacing: "md",
+                            contents: [
+                                {
+                                    type: "box",
+                                    layout: "horizontal",
+                                    contents: [
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: "เลขกรมธรรม์",
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#9E9E9E",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                             "width": "100px"
+                                        },
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: `${pol_id[1]}`,
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#0033A2",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    type: "box",
+                                    layout: "horizontal",
+                                    contents: [
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: "ผู้เอาประกันภัย",
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#9E9E9E",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                            "width": "100px"
+                                        },
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: `${pol_first_name[1]} ${pol_last_name[1]}`,
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#0033A2",
+                                                    style: "normal",
+                                                    offsetTop: "sm",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    type: "box",
+                                    layout: "horizontal",
+                                    contents: [
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: "ทะเบียนรถ",
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#9E9E9E",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                            "width": "100px"
+                                        },
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text:`${pol_voluntary_plateno[1]}`,
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#0033A2",
+                                                    style: "normal",
+                                                    offsetTop: "sm",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    type: "box",
+                                    layout: "horizontal",
+                                    contents: [
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: "วันที่เริ่มคุ้มครอง",
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#9E9E9E",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                        },
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: `${dateStart}`,
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#0033A2",
+                                                    style: "normal",
+                                                    offsetTop: "sm",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    type: "box",
+                                    layout: "horizontal",
+                                    contents: [
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: "วันที่หมดอายุ",
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#9E9E9E",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                            "width": "100px"
+                                        },
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: `${endDate}`,
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#0033A2",
+                                                    style: "normal",
+                                                    offsetTop: "sm",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    type: "box",
+                                    layout: "horizontal",
+                                    contents: [
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: "สถานะกรมธรรม์",
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#9E9E9E",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                            "width": "100px"
+                                        },
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: `${pol_status_active[1]}`,
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#0033A2",
+                                                    style: "normal",
+                                                    offsetTop: "sm",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ],
+                            height: "150px",
+                            offsetStart: "xs",
+                        },
+                    ],
+                    paddingTop: "xl",
+                },
+                footer: {
+                    type: "box",
+                    layout: "vertical",
+                    spacing: "sm",
+                    contents: [
+                        {
+                            type: "box",
+                            layout: "vertical",
+                            contents: [
+                                {
+                                    type: "text",
+                                    text: "แจ้งเคลม",
+                                    size: "14px",
+                                    weight: "regular",
+                                    color: "#FFFFFF",
+                                    margin: "none",
+                                },
+                            ],
+                            height: "36px",
+                            width: "240px",
+                            backgroundColor: "#0033A2",
+                            cornerRadius: "8px",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            margin: "md",
+                            offsetStart: "xxl",
+                            action: {
+                                type: "uri",
+                                label: "action",
+                                uri: "tel://021298888",
+                            },
+                        },
+                        {
+                            type: "box",
+                            layout: "vertical",
+                            contents: [
+                                {
+                                    type: "text",
+                                    text: "ดูกรมธรรม์",
+                                    size: "14px",
+                                    weight: "regular",
+                                    color: "#FFFFFF",
+                                    margin: "none",
+                                },
+                            ],
+                            height: "36px",
+                            width: "240px",
+                            backgroundColor: "#0033A2",
+                            cornerRadius: "8px",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            margin: "lg",
+                            offsetStart: "xxl",
+                            action: {
+                                type: "uri",
+                                label: "action",
+                                uri: "http://linecorp.com/",
+                            },
+                        },
+                    ],
+                    flex: 0,
+                    height: "130px",
+                },
+            };
+            newDataContent.push(JSON.parse(JSON.stringify(bodyContent)));
+        } else {
+            let lastContent = {
+                type: "bubble",
+                size: "mega",
+                hero: {
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
+                        {
+                            type: "image",
+                            url: "https://i.imgur.com/a1SCtg0.png",
+                            size: "240px",
+                            aspectRatio: "10:4",
+                        },
+                        {
+                            type: "separator",
+                            color: "#FCAF17",
+                        },
+                    ],
+                    height: "100px",
+                },
+                body: {
+                    type: "box",
+                    layout: "vertical",
+                    spacing: "lg",
+                    action: {
+                        type: "uri",
+                        uri: "https://linecorp.com",
+                    },
+                    contents: [
+                        {
+                            type: "box",
+                            layout: "vertical",
+                            contents: [
+                                {
+                                    type: "text",
+                                    text: `${pol_name[1]}`,
+                                    size: "14px",
+                                    color: "#616161",
+                                    weight: "bold",
+                                    style: "normal",
+                                },
+                            ],
+                            offsetStart: "xs",
+                        },
+                        {
+                            type: "box",
+                            layout: "vertical",
+                            spacing: "md",
+                            contents: [
+                                {
+                                    type: "box",
+                                    layout: "horizontal",
+                                    contents: [
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: "เลขกรมธรรม์",
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#9E9E9E",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                             "width": "100px"
+                                        },
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: `${pol_id[1]}`,
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#0033A2",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    type: "box",
+                                    layout: "horizontal",
+                                    contents: [
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: "ผู้เอาประกันภัย",
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#9E9E9E",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                             "width": "100px"
+                                        },
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: `${pol_first_name[1]} ${pol_last_name[1]}`,
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#0033A2",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    type: "box",
+                                    layout: "horizontal",
+                                    contents: [
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: "แผน",
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#9E9E9E",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                             "width": "100px"
+                                        },
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: "1",
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#0033A2",
+                                                    style: "normal",
+                                                    offsetTop: "sm",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    type: "box",
+                                    layout: "horizontal",
+                                    contents: [
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: "วันที่เริ่มคุ้มครอง",
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#9E9E9E",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                             "width": "100px"
+                                        },
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: `${dateStart}`,
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#0033A2",
+                                                    style: "normal",
+                                                    offsetTop: "sm",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    type: "box",
+                                    layout: "horizontal",
+                                    contents: [
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: "วันที่หมดอายุ",
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#9E9E9E",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                             "width": "100px"
+                                        },
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: `${endDate}`,
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#0033A2",
+                                                    style: "normal",
+                                                    offsetTop: "sm",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    type: "box",
+                                    layout: "horizontal",
+                                    contents: [
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: "สถานะกรมธรรม์",
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#9E9E9E",
+                                                    style: "normal",
+                                                },
+                                            ],
+                                             "width": "100px"
+                                        },
+                                        {
+                                            type: "box",
+                                            layout: "vertical",
+                                            contents: [
+                                                {
+                                                    type: "text",
+                                                    text: `${pol_status_active[1]}`,
+                                                    flex: 0,
+                                                    size: "12px",
+                                                    color: "#0033A2",
+                                                    style: "normal",
+                                                    offsetTop: "sm",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ],
+                            height: "150px",
+                            offsetStart: "xs",
+                        },
+                    ],
+                    paddingTop: "xl",
+                },
+                footer: {
+                    type: "box",
+                    layout: "vertical",
+                    spacing: "sm",
+                    contents: [
+                        {
+                            type: "box",
+                            layout: "vertical",
+                            contents: [
+                                {
+                                    type: "text",
+                                    text: "แจ้งเคลม",
+                                    size: "14px",
+                                    weight: "regular",
+                                    color: "#FFFFFF",
+                                    margin: "none",
+                                },
+                            ],
+                            height: "36px",
+                            width: "240px",
+                            backgroundColor: "#0033A2",
+                            cornerRadius: "8px",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            margin: "md",
+                            offsetStart: "xxl",
+                            action: {
+                                type: "uri",
+                                label: "action",
+                                uri: "tel://021298888",
+                            },
+                        },
+                        {
+                            type: "box",
+                            layout: "vertical",
+                            contents: [
+                                {
+                                    type: "text",
+                                    text: "ดูกรมธรรม์",
+                                    size: "14px",
+                                    weight: "regular",
+                                    color: "#FFFFFF",
+                                    margin: "none",
+                                },
+                            ],
+                            height: "36px",
+                            width: "240px",
+                            backgroundColor: "#0033A2",
+                            cornerRadius: "8px",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            margin: "lg",
+                            offsetStart: "xxl",
+                            action: {
+                                type: "uri",
+                                label: "action",
+                                uri: "http://linecorp.com/",
+                            },
+                        },
+                    ],
+                    flex: 0,
+                    height: "130px",
+                },
+            };
+            newDataContent.push(JSON.parse(JSON.stringify(lastContent)));
+        }  
+    }
+    message.contents.contents = newDataContent;
+}
+
+function renewal_claim_and_view_policy_flex(message) {
+    let newDataContent = new Array();
+    let data = message.contents.contents;
+    let type = data[0].body.contents[0].text || "";
+    let pol_name = (data[0].body.contents[1].text.split("|")[1] || "").split(":");
+    let pol_id = (data[0].body.contents[1].text.split("|")[2] || "").split(":");
+    let pol_first_name = (data[0].body.contents[1].text.split("|")[3] || "").split(":");
+    let pol_last_name = (data[0].body.contents[1].text.split("|")[4] || "").split(":");
+    let pol_valuntary_plateno = (data[0].body.contents[1].text.split("|")[5] || "").split(":");
+    let pol_type = (data[0].body.contents[1].text.split("|")[6] || "").split(":");
+    let pol_start_date = (data[0].body.contents[1].text.split("|")[7] || "").split(":");
+    let pol_end_date = (data[0].body.contents[1].text.split("|")[8] || "").split(":");
+    let pol_status_active = (data[0].body.contents[1].text.split("|")[9] || "").split(":");
+    let pol_voluntary_plateno = (data[0].body.contents[1].text.split("|")[10] || "").split(":");
+    let btn = data[0].footer.contents[0].action.label;
+    let url = data[0].footer.contents[0].action.uri;
+    
+    let startDate = pol_start_date[1].substr(0, 10);
+    let sDate = startDate.split("-").reverse().join("/");
+    let split_date = sDate.split("/");
+    let dateStart = split_date[2] + "/" + split_date[1]+ "/" + split_date[0];
+    
+    let end_date = pol_end_date[1].substr(0, 10);
+    let eDate = end_date.split("-").reverse().join("/");
+    let split_end_date = eDate.split("/");
+    let endDate = split_end_date[2] + "/" + split_end_date[1]+ "/" + split_end_date[0];
+
+    if (pol_type === "1") {
+        let bodyContent = {
+            type: "bubble",
+            size: "mega",
+            hero: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "image",
+                        url: "https://i.imgur.com/i8ClcWx.png",
+                        size: "240px",
+                        aspectRatio: "10:4",
+                    },
+                    {
+                        type: "separator",
+                        color: "#FCAF17",
+                    },
+                ],
+                height: "100px",
+            },
+            body: {
+                type: "box",
+                layout: "vertical",
+                spacing: "lg",
+                action: {
+                    type: "uri",
+                    uri: "https://linecorp.com",
+                },
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: `${pol_name[1]}`,
+                                size: "14px",
+                                color: "#616161",
+                                weight: "bold",
+                                style: "normal",
+                            },
+                        ],
+                        offsetStart: "xs",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        spacing: "md",
+                        contents: [
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "เลขกรมธรรม์",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_id[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ผู้เอาประกันภัย",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_first_name[1]} ${pol_last_name[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ทะเบียนรถ",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text:`${pol_voluntary_plateno[1]}`,
+                                                size: "12px",
+                                                align: "start",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "วันที่เริ่มคุ้มครอง",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${dateStart}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "วันที่หมดอายุ",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${endDate}*`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#F72C40",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "สถานะกรมธรรม์",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ไม่คุ้มครอง",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                        height: "150px",
+                        offsetStart: "xs",
+                    },
+                ],
+                paddingTop: "xl",
+            },
+            footer: {
+                type: "box",
+                layout: "vertical",
+                spacing: "sm",
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "ต่ออายุกรมธรรม์",
+                                size: "14px",
+                                weight: "regular",
+                                color: "#FFFFFF",
+                                margin: "none",
+                            },
+                        ],
+                        height: "36px",
+                        width: "240px",
+                        backgroundColor: "#F72C40",
+                        cornerRadius: "8px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        margin: "md",
+                        offsetStart: "xxl",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "แจ้งเคลม",
+                                size: "14px",
+                                weight: "regular",
+                                color: "#FFFFFF",
+                                margin: "none",
+                            },
+                        ],
+                        height: "36px",
+                        width: "240px",
+                        backgroundColor: "#0033A2",
+                        cornerRadius: "8px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        margin: "lg",
+                        offsetStart: "xxl",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "tel://021298888",
+                        },
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "ดูกรมธรรม์",
+                                size: "14px",
+                                weight: "regular",
+                                color: "#FFFFFF",
+                                margin: "none",
+                            },
+                        ],
+                        height: "36px",
+                        width: "240px",
+                        backgroundColor: "#0033A2",
+                        cornerRadius: "8px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        margin: "lg",
+                        offsetStart: "xxl",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                    },
+                ],
+                flex: 0,
+                height: "180px",
+            },
+        };
+        newDataContent.push(JSON.parse(JSON.stringify(bodyContent)));
+    } else {
+        let lastContent = {
+            type: "bubble",
+            size: "mega",
+            hero: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "image",
+                        url: "https://i.imgur.com/a1SCtg0.png",
+                        size: "240px",
+                        aspectRatio: "10:4",
+                    },
+                    {
+                        type: "separator",
+                        color: "#FCAF17",
+                    },
+                ],
+                height: "100px",
+            },
+            body: {
+                type: "box",
+                layout: "vertical",
+                spacing: "lg",
+                action: {
+                    type: "uri",
+                    uri: "https://linecorp.com",
+                },
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: `${pol_name[1]}`,
+                                size: "14px",
+                                color: "#616161",
+                                weight: "bold",
+                                style: "normal",
+                            },
+                        ],
+                        offsetStart: "xs",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        spacing: "md",
+                        contents: [
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "เลขกรมธรรม์",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_id[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ผู้เอาประกันภัย",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_first_name[1]} ${pol_last_name[1]}`,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "แผน",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "1",
+                                                size: "12px",
+                                                align: "start",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "วันที่เริ่มคุ้มครอง",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${dateStart}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "วันที่หมดอายุ",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${endDate}*`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#F72C40",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "สถานะกรมธรรม์",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ไม่คุ้มครอง",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                        height: "150px",
+                        offsetStart: "xs",
+                    },
+                ],
+                paddingTop: "xl",
+            },
+            footer: {
+                type: "box",
+                layout: "vertical",
+                spacing: "sm",
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "ต่ออายุกรมธรรม์",
+                                size: "14px",
+                                weight: "regular",
+                                color: "#FFFFFF",
+                                margin: "none",
+                            },
+                        ],
+                        height: "36px",
+                        width: "240px",
+                        backgroundColor: "#F72C40",
+                        cornerRadius: "8px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        margin: "md",
+                        offsetStart: "xxl",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "แจ้งเคลม",
+                                size: "14px",
+                                weight: "regular",
+                                color: "#FFFFFF",
+                                margin: "none",
+                            },
+                        ],
+                        height: "36px",
+                        width: "240px",
+                        backgroundColor: "#0033A2",
+                        cornerRadius: "8px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        margin: "lg",
+                        offsetStart: "xxl",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "tel://021298888",
+                        },
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "ดูกรมธรรม์",
+                                size: "14px",
+                                weight: "regular",
+                                color: "#FFFFFF",
+                                margin: "none",
+                            },
+                        ],
+                        height: "36px",
+                        width: "240px",
+                        backgroundColor: "#0033A2",
+                        cornerRadius: "8px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        margin: "lg",
+                        offsetStart: "xxl",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                    },
+                ],
+                flex: 0,
+                height: "180px",
+            },
+        };
+        newDataContent.push(JSON.parse(JSON.stringify(lastContent)));
+    }
+    message.contents.contents = newDataContent;
+}
+function renewal_and_view_policy_flex(message) {
+    let newDataContent = new Array();
+    let data = message.contents.contents;
+    let type = data[0].body.contents[0].text || "";
+    let pol_name = (data[0].body.contents[1].text.split("|")[1] || "").split(":");
+    let pol_id = (data[0].body.contents[1].text.split("|")[2] || "").split(":");
+    let pol_first_name = (data[0].body.contents[1].text.split("|")[3] || "").split(":");
+    let pol_last_name = (data[0].body.contents[1].text.split("|")[4] || "").split(":");
+    let pol_valuntary_plateno = (data[0].body.contents[1].text.split("|")[5] || "").split(":");
+    let pol_type = (data[0].body.contents[1].text.split("|")[6] || "").split(":");
+    let pol_start_date = (data[0].body.contents[1].text.split("|")[7] || "").split(":");
+    let pol_end_date = (data[0].body.contents[1].text.split("|")[8] || "").split(":");
+    let pol_status_active = (data[0].body.contents[1].text.split("|")[9] || "").split(":");
+    let pol_voluntary_plateno = (data[0].body.contents[1].text.split("|")[10] || "").split(":");
+    let btn = data[0].footer.contents[0].action.label;
+    let url = data[0].footer.contents[0].action.uri;
+    
+    let startDate = pol_start_date[1].substr(0, 10);
+    let sDate = startDate.split("-").reverse().join("/");
+    let split_date = sDate.split("/");
+    let dateStart = split_date[2] + "/" + split_date[1]+ "/" + split_date[0];
+    
+    let end_date = pol_end_date[1].substr(0, 10);
+    let eDate = end_date.split("-").reverse().join("/");
+    let split_end_date = eDate.split("/");
+    let endDate = split_end_date[2] + "/" + split_end_date[1]+ "/" + split_end_date[0];
+
+    if (pol_type === "1") {
+        let bodyContent = {
+            type: "bubble",
+            size: "mega",
+            hero: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "image",
+                        url: "https://i.imgur.com/i8ClcWx.png",
+                        size: "240px",
+                        aspectRatio: "10:4",
+                    },
+                    {
+                        type: "separator",
+                        color: "#FCAF17",
+                    },
+                ],
+                height: "100px",
+            },
+            body: {
+                type: "box",
+                layout: "vertical",
+                spacing: "lg",
+                action: {
+                    type: "uri",
+                    uri: "https://linecorp.com",
+                },
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: `${pol_name[1]}`,
+                                size: "14px",
+                                color: "#616161",
+                                weight: "bold",
+                                style: "normal",
+                            },
+                        ],
+                        offsetStart: "xs",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        spacing: "md",
+                        contents: [
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "เลขกรมธรรม์",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_id[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ผู้เอาประกันภัย",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_first_name[1]} ${pol_last_name[1]}`,
+                                                size: "12px",
+                                                align: "start",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ทะเบียนรถ",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text:`${pol_voluntary_plateno[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "วันที่เริ่มคุ้มครอง",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${dateStart}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "วันที่หมดอายุ",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${endDate}*`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#F72C40",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "สถานะกรมธรรม์",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ไม่คุ้มครอง",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                        height: "150px",
+                        offsetStart: "xs",
+                    },
+                ],
+                paddingTop: "xl",
+            },
+            footer: {
+                type: "box",
+                layout: "vertical",
+                spacing: "sm",
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "ต่ออายุกรมธรรม์",
+                                size: "14px",
+                                weight: "regular",
+                                color: "#FFFFFF",
+                                margin: "none",
+                            },
+                        ],
+                        height: "36px",
+                        width: "240px",
+                        backgroundColor: "#F72C40",
+                        cornerRadius: "8px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        margin: "md",
+                        offsetStart: "xxl",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "ดูกรมธรรม์",
+                                size: "14px",
+                                weight: "regular",
+                                color: "#FFFFFF",
+                                margin: "none",
+                            },
+                        ],
+                        height: "36px",
+                        width: "240px",
+                        backgroundColor: "#0033A2",
+                        cornerRadius: "8px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        margin: "lg",
+                        offsetStart: "xxl",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                    },
+                ],
+                flex: 0,
+                height: "130px",
+            },
+        };
+        newDataContent.push(JSON.parse(JSON.stringify(bodyContent)));
+    } else {
+        let lastContent = {
+            type: "bubble",
+            size: "mega",
+            hero: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "image",
+                        url: "https://i.imgur.com/a1SCtg0.png",
+                        size: "240px",
+                        aspectRatio: "10:4",
+                    },
+                    {
+                        type: "separator",
+                        color: "#FCAF17",
+                    },
+                ],
+                height: "100px",
+            },
+            body: {
+                type: "box",
+                layout: "vertical",
+                spacing: "lg",
+                action: {
+                    type: "uri",
+                    uri: "https://linecorp.com",
+                },
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: `${pol_name[1]}`,
+                                size: "14px",
+                                color: "#616161",
+                                weight: "bold",
+                                style: "normal",
+                            },
+                        ],
+                        offsetStart: "xs",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        spacing: "md",
+                        contents: [
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "เลขกรมธรรม์",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_id[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ผู้เอาประกันภัย",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_first_name[1]} ${pol_last_name[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "แผน",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "1",
+                                                offsetTop: "sm",
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "วันที่เริ่มคุ้มครอง",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${dateStart}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "วันที่หมดอายุ",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${endDate}*`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#F72C40",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "สถานะกรมธรรม์",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ไม่คุ้มครอง",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                        height: "150px",
+                        offsetStart: "xs",
+                    },
+                ],
+                paddingTop: "xl",
+            },
+            footer: {
+                type: "box",
+                layout: "vertical",
+                spacing: "sm",
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "ต่ออายุกรมธรรม์",
+                                size: "14px",
+                                weight: "regular",
+                                color: "#FFFFFF",
+                                margin: "none",
+                            },
+                        ],
+                        height: "36px",
+                        width: "240px",
+                        backgroundColor: "#F72C40",
+                        cornerRadius: "8px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        margin: "md",
+                        offsetStart: "xxl",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "ดูกรมธรรม์",
+                                size: "14px",
+                                weight: "regular",
+                                color: "#FFFFFF",
+                                margin: "none",
+                            },
+                        ],
+                        height: "36px",
+                        width: "240px",
+                        backgroundColor: "#0033A2",
+                        cornerRadius: "8px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        margin: "lg",
+                        offsetStart: "xxl",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                    },
+                ],
+                flex: 0,
+                height: "130px",
+            },
+        };
+        newDataContent.push(JSON.parse(JSON.stringify(lastContent)));
+    }
+    message.contents.contents = newDataContent;
+}
+
+function view_policy_flex(message) {
+    let newDataContent = new Array();
+    let data = message.contents.contents;
+    let type = data[0].body.contents[0].text || "";
+    let pol_name = (data[0].body.contents[1].text.split("|")[1] || "").split(":");
+    let pol_id = (data[0].body.contents[1].text.split("|")[2] || "").split(":");
+    let pol_first_name = (data[0].body.contents[1].text.split("|")[3] || "").split(":");
+    let pol_last_name = (data[0].body.contents[1].text.split("|")[4] || "").split(":");
+    let pol_valuntary_plateno = (data[0].body.contents[1].text.split("|")[5] || "").split(":");
+    let pol_type = (data[0].body.contents[1].text.split("|")[6] || "").split(":");
+    let pol_start_date = (data[0].body.contents[1].text.split("|")[7] || "").split(":");
+    let pol_end_date = (data[0].body.contents[1].text.split("|")[8] || "").split(":");
+    let pol_status_active = (data[0].body.contents[1].text.split("|")[9] || "").split(":");
+    let pol_voluntary_plateno = (data[0].body.contents[1].text.split("|")[10] || "").split(":");
+    let btn = data[0].footer.contents[0].action.label;
+    let url = data[0].footer.contents[0].action.uri;
+    
+    let startDate = pol_start_date[1].substr(0, 10);
+    let sDate = startDate.split("-").reverse().join("/");
+    let split_date = sDate.split("/");
+    let dateStart = split_date[2] + "/" + split_date[1]+ "/" + split_date[0];
+    
+    let end_date = pol_end_date[1].substr(0, 10);
+    let eDate = end_date.split("-").reverse().join("/");
+    let split_end_date = eDate.split("/");
+    let endDate = split_end_date[2] + "/" + split_end_date[1]+ "/" + split_end_date[0];
+
+
+    if (pol_type === "1") {
+        let bodyContent = {
+            type: "bubble",
+            size: "mega",
+            hero: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "image",
+                        url: "https://i.imgur.com/i8ClcWx.png",
+                        size: "240px",
+                        aspectRatio: "10:4",
+                    },
+                    {
+                        type: "separator",
+                        color: "#FCAF17",
+                    },
+                ],
+                height: "100px",
+            },
+            body: {
+                type: "box",
+                layout: "vertical",
+                spacing: "lg",
+                action: {
+                    type: "uri",
+                    uri: "https://linecorp.com",
+                },
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: `${pol_name[1]}`,
+                                size: "14px",
+                                color: "#616161",
+                                weight: "bold",
+                                style: "normal",
+                            },
+                        ],
+                        offsetStart: "xs",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        spacing: "md",
+                        contents: [
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "เลขกรมธรรม์",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_id[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ผู้เอาประกันภัย",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_first_name[1]} ${pol_last_name[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ทะเบียนรถ",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text:`${pol_voluntary_plateno[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "วันที่เริ่มคุ้มครอง",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${dateStart}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "วันที่หมดอายุ",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${endDate}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "สถานะกรมธรรม์",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_status_active[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                        height: "150px",
+                        offsetStart: "xs",
+                    },
+                ],
+                paddingTop: "xl",
+            },
+            footer: {
+                type: "box",
+                layout: "vertical",
+                spacing: "sm",
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "ดูกรมธรรม์",
+                                size: "14px",
+                                weight: "regular",
+                                color: "#FFFFFF",
+                                margin: "none",
+                            },
+                        ],
+                        height: "36px",
+                        width: "240px",
+                        backgroundColor: "#0033A2",
+                        cornerRadius: "8px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        margin: "lg",
+                        offsetStart: "xxl",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                    },
+                ],
+                flex: 0,
+                height: "130px",
+            },
+        };
+        newDataContent.push(JSON.parse(JSON.stringify(bodyContent)));
+    } else {
+        let lastContent = {
+            type: "bubble",
+            size: "mega",
+            hero: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "image",
+                        url: "https://i.imgur.com/a1SCtg0.png",
+                        size: "240px",
+                        aspectRatio: "10:4",
+                    },
+                    {
+                        type: "separator",
+                        color: "#FCAF17",
+                    },
+                ],
+                height: "100px",
+            },
+            body: {
+                type: "box",
+                layout: "vertical",
+                spacing: "lg",
+                action: {
+                    type: "uri",
+                    uri: "https://linecorp.com",
+                },
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: `${pol_name[1]}`,
+                                size: "14px",
+                                color: "#616161",
+                                weight: "bold",
+                                style: "normal",
+                            },
+                        ],
+                        offsetStart: "xs",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        spacing: "md",
+                        contents: [
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "เลขกรมธรรม์",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_id[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ผู้เอาประกันภัย",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_first_name[1]} ${pol_last_name[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "แผน",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "1",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "วันที่เริ่มคุ้มครอง",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${dateStart}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "วันที่หมดอายุ",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${endDate}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "สถานะกรมธรรม์",
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#9E9E9E",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        "width": "100px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: `${pol_status_active[1]}`,
+                                                flex: 0,
+                                                size: "12px",
+                                                color: "#0033A2",
+                                                style: "normal",
+                                                offsetTop: "sm",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                        height: "150px",
+                        offsetStart: "xs",
+                    },
+                ],
+                paddingTop: "xl",
+            },
+            footer: {
+                type: "box",
+                layout: "vertical",
+                spacing: "sm",
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "ดูกรมธรรม์",
+                                size: "14px",
+                                weight: "regular",
+                                color: "#FFFFFF",
+                                margin: "none",
+                            },
+                        ],
+                        height: "36px",
+                        width: "240px",
+                        backgroundColor: "#0033A2",
+                        cornerRadius: "8px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        margin: "lg",
+                        offsetStart: "xxl",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                    },
+                ],
+                flex: 0,
+                height: "80px",
+            },
+        };
+        newDataContent.push(JSON.parse(JSON.stringify(lastContent)));
+    }
+    message.contents.contents = newDataContent;
+}
+
+return msg;

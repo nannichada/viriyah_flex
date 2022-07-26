@@ -1,0 +1,629 @@
+{
+    "type": "carousel",
+    "contents": [
+      {
+        "type": "bubble",
+        "size": "giga",
+        "header": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "image",
+              "url": "https://upload.convolab.ai/viriyah-dev%2Fd3545f63-cd6a-4c41-8ecb-c46d86858218.jpg",
+              "size": "373px"
+            }
+          ],
+          "height": "80px",
+          "alignItems": "center",
+          "justifyContent": "space-between"
+        },
+        "hero": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [],
+          "borderColor": "#FCAF17",
+          "width": "100%",
+          "paddingAll": "0px",
+          "height": "0.5px",
+          "offsetBottom": "none",
+          "margin": "none",
+          "backgroundColor": "#FCAF17"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "1. การซื้อประกันกับวิริยะ ดีกว่าบริษัทอื่นอย่างไร  และทำไมถึงต้องเลือกวิริยะ",
+                      "size": "14px",
+                      "weight": "regular",
+                      "color": "#0033A2",
+                      "wrap": true,
+                      "maxLines": 3,
+                      "align": "start",
+                      "gravity": "center"
+                    }
+                  ],
+                  "offsetStart": "none",
+                  "paddingStart": "md",
+                  "height": "40px",
+                  "offsetEnd": "none",
+                  "alignItems": "center",
+                  "justifyContent": "flex-start"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "image",
+                      "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                      "size": "15px",
+                      "aspectRatio": "1:1"
+                    }
+                  ],
+                  "offsetEnd": "none",
+                  "width": "20px"
+                }
+              ],
+              
+              "paddingAll": "none",
+              "paddingStart": "none",
+              "paddingEnd": "none",
+              "offsetStart": "none",
+              "height": "40px",
+              "spacing": "sm",
+              "justifyContent": "flex-start",
+              "alignItems": "center"
+            },
+            {
+              "type": "separator",
+              "color": "#F5F5F5"
+            },
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "2. ประกันชีวิตและประกันสุขภาพต่างกันอย่างไร",
+                      "size": "14px",
+                      "weight": "regular",
+                      "color": "#0033A2",
+                      "wrap": true,
+                      "maxLines": 2,
+                      "flex": 2,
+                      "offsetTop": "10px"
+                    }
+                  ],
+                  "offsetStart": "none",
+                  "paddingStart": "md",
+                  "height": "40px"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "image",
+                      "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                      "size": "15px",
+                      "aspectRatio": "1:1"
+                    }
+                  ],
+                  "paddingStart": "none",
+                  "offsetEnd": "none",
+                  "width": "20px"
+                }
+              ],
+              
+              "paddingAll": "none",
+              "paddingStart": "none",
+              "paddingEnd": "none",
+              "offsetStart": "none",
+              "height": "40px",
+              "spacing": "sm",
+              "justifyContent": "flex-start",
+              "alignItems": "center"
+            },
+            {
+              "type": "separator",
+              "color": "#F5F5F5"
+            },
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "3. จะเลือกประกันสุขภาพที่เหมาะสมกับตัวเองได้อย่างไร",
+                      "size": "14px",
+                      "weight": "regular",
+                      "color": "#0033A2",
+                      "wrap": true,
+                      "maxLines": 2,
+                      "flex": 2,
+                      "align": "start",
+                      "gravity": "center"
+                    }
+                  ],
+                  "offsetStart": "none",
+                  "paddingStart": "md",
+                  "height": "40px"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "image",
+                      "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                      "size": "15px",
+                      "aspectRatio": "1:1"
+                    }
+                  ],
+                  "paddingStart": "none",
+                  "offsetEnd": "none",
+                  "width": "20px"
+                }
+              ],
+              
+              "paddingAll": "none",
+              "paddingStart": "none",
+              "paddingEnd": "none",
+              "offsetStart": "none",
+              "height": "40px",
+              "spacing": "sm",
+              "alignItems": "center",
+              "justifyContent": "flex-start"
+            },
+            {
+              "type": "separator",
+              "color": "#F5F5F5"
+            },
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "4. หากจำเป็นต้องเข้ารับการรักษา ต้องทำอย่างไร",
+                      "size": "14px",
+                      "weight": "regular",
+                      "color": "#0033A2",
+                      "wrap": true,
+                      "maxLines": 2,
+                      "flex": 2,
+                      "align": "start",
+                      "gravity": "center"
+                    }
+                  ],
+                  "offsetStart": "none",
+                  "height": "40px",
+                  "paddingStart": "md"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "image",
+                      "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                      "size": "15px",
+                      "aspectRatio": "1:1"
+                    }
+                  ],
+                  "paddingStart": "none",
+                  "offsetEnd": "none",
+                  "width": "20px"
+                }
+              ],
+              
+              "paddingAll": "none",
+              "paddingStart": "none",
+              "paddingEnd": "none",
+              "offsetStart": "none",
+              "height": "40px",
+              "spacing": "sm",
+              "justifyContent": "flex-start",
+              "alignItems": "center"
+            },
+            {
+              "type": "separator",
+              "color": "#F5F5F5"
+            },
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "5. ต้องการแก้ไขข้อมูล ชื่อ นามสกุล ผู้รับผลประโยชน์  หรือข้อมูลอื่น ๆ ทำอย่างไรบ้าง",
+                      "size": "14px",
+                      "weight": "regular",
+                      "color": "#0033A2",
+                      "wrap": true,
+                      "maxLines": 3,
+                      "align": "start",
+                      "gravity": "center"
+                    }
+                  ],
+                  "offsetStart": "none",
+                  "paddingStart": "md",
+                  "height": "40px"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "image",
+                      "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                      "size": "15px",
+                      "aspectRatio": "1:1"
+                    }
+                  ],
+                  "paddingStart": "none",
+                  "offsetEnd": "none",
+                  "width": "20px"
+                }
+              ],
+             
+              "paddingAll": "none",
+              "paddingStart": "none",
+              "paddingEnd": "none",
+              "offsetStart": "none",
+              "height": "40px",
+              "spacing": "sm",
+              "justifyContent": "flex-start",
+              "alignItems": "center"
+            }
+          ],
+          "margin": "none",
+          "width": "100%",
+          "offsetBottom": "sm"
+        }
+      }
+    ]
+  }
+
+  /////////////////////////////////////////////////////////////////////////////////
+
+  {
+    "type": "carousel",
+    "contents": [
+      {
+        "type": "bubble",
+        "size": "giga",
+        "header": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "image",
+              "url": "https://upload.convolab.ai/viriyah-dev%2Fd3545f63-cd6a-4c41-8ecb-c46d86858218.jpg",
+              "size": "373px"
+            }
+          ],
+          "height": "80px",
+          "alignItems": "center",
+          "justifyContent": "space-between"
+        },
+        "hero": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [],
+          "borderColor": "#FCAF17",
+          "width": "100%",
+          "paddingAll": "0px",
+          "height": "0.5px",
+          "offsetBottom": "none",
+          "margin": "none",
+          "backgroundColor": "#FCAF17"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "1. การซื้อประกันกับวิริยะ ดีกว่าบริษัทอื่นอย่างไร  และทำไมถึงต้องเลือกวิริยะ",
+                      "size": "14px",
+                      "weight": "regular",
+                      "color": "#0033A2",
+                      "wrap": true,
+                      "maxLines": 3,
+                      "align": "start",
+                      "gravity": "center",
+                      "flex": 2
+                    }
+                  ],
+                  "offsetStart": "none",
+                  "paddingStart": "md",
+                  "height": "40px",
+                  "offsetEnd": "none",
+                  "alignItems": "center",
+                  "justifyContent": "flex-start"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "image",
+                      "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                      "size": "15px",
+                      "aspectRatio": "1:1"
+                    }
+                  ],
+                  "offsetEnd": "none",
+                  "width": "30px"
+                }
+              ],
+              "paddingAll": "none",
+              "paddingStart": "none",
+              "paddingEnd": "none",
+              "offsetStart": "none",
+              "height": "40px",
+              "spacing": "sm",
+              "justifyContent": "flex-start",
+              "alignItems": "center"
+            },
+            {
+              "type": "separator",
+              "color": "#F5F5F5",
+              "margin": "lg"
+            },
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "2. ประกันชีวิตและประกันสุขภาพต่างกันอย่างไร",
+                      "size": "14px",
+                      "weight": "regular",
+                      "color": "#0033A2",
+                      "wrap": true,
+                      "maxLines": 2,
+                      "flex": 2,
+                      "offsetTop": "10px"
+                    }
+                  ],
+                  "offsetStart": "none",
+                  "paddingStart": "md",
+                  "height": "40px"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "image",
+                      "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                      "size": "15px",
+                      "aspectRatio": "1:1"
+                    }
+                  ],
+                  "paddingStart": "none",
+                  "offsetEnd": "none",
+                  "width": "20px"
+                }
+              ],
+              "paddingAll": "none",
+              "paddingStart": "none",
+              "paddingEnd": "none",
+              "offsetStart": "none",
+              "height": "40px",
+              "spacing": "sm",
+              "justifyContent": "flex-start",
+              "alignItems": "center"
+            },
+            {
+              "type": "separator",
+              "color": "#F5F5F5"
+            },
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "3. จะเลือกประกันสุขภาพที่เหมาะสมกับตัวเองได้อย่างไร",
+                      "size": "14px",
+                      "weight": "regular",
+                      "color": "#0033A2",
+                      "wrap": true,
+                      "maxLines": 2,
+                      "flex": 2,
+                      "align": "start",
+                      "gravity": "center"
+                    }
+                  ],
+                  "offsetStart": "none",
+                  "paddingStart": "md",
+                  "height": "40px"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "image",
+                      "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                      "size": "15px",
+                      "aspectRatio": "1:1"
+                    }
+                  ],
+                  "paddingStart": "none",
+                  "offsetEnd": "none",
+                  "width": "20px"
+                }
+              ],
+              "paddingAll": "none",
+              "paddingStart": "none",
+              "paddingEnd": "none",
+              "offsetStart": "none",
+              "height": "40px",
+              "spacing": "sm",
+              "alignItems": "center",
+              "justifyContent": "flex-start"
+            },
+            {
+              "type": "separator",
+              "color": "#F5F5F5"
+            },
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "4. หากจำเป็นต้องเข้ารับการรักษา ต้องทำอย่างไร",
+                      "size": "14px",
+                      "weight": "regular",
+                      "color": "#0033A2",
+                      "wrap": true,
+                      "maxLines": 2,
+                      "flex": 2,
+                      "align": "start",
+                      "gravity": "center"
+                    }
+                  ],
+                  "offsetStart": "none",
+                  "height": "40px",
+                  "paddingStart": "md"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "image",
+                      "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                      "size": "15px",
+                      "aspectRatio": "1:1"
+                    }
+                  ],
+                  "paddingStart": "none",
+                  "offsetEnd": "none",
+                  "width": "20px"
+                }
+              ],
+              "paddingAll": "none",
+              "paddingStart": "none",
+              "paddingEnd": "none",
+              "offsetStart": "none",
+              "height": "40px",
+              "spacing": "sm",
+              "justifyContent": "flex-start",
+              "alignItems": "center"
+            },
+            {
+              "type": "separator",
+              "color": "#F5F5F5"
+            },
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "5. ต้องการแก้ไขข้อมูล ชื่อ นามสกุล ผู้รับผลประโยชน์  หรือข้อมูลอื่น ๆ ทำอย่างไรบ้าง",
+                      "size": "14px",
+                      "weight": "regular",
+                      "color": "#0033A2",
+                      "wrap": true,
+                      "maxLines": 3,
+                      "align": "start",
+                      "gravity": "center"
+                    }
+                  ],
+                  "offsetStart": "none",
+                  "paddingStart": "md",
+                  "height": "40px",
+                  "offsetTop": "xs"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "image",
+                      "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                      "size": "15px",
+                      "aspectRatio": "1:1"
+                    }
+                  ],
+                  "paddingStart": "none",
+                  "offsetEnd": "none",
+                  "width": "20px"
+                }
+              ],
+              "paddingAll": "none",
+              "paddingStart": "none",
+              "paddingEnd": "none",
+              "offsetStart": "none",
+              "height": "50px",
+              "spacing": "sm",
+              "justifyContent": "flex-start",
+              "alignItems": "center"
+            }
+          ],
+          "margin": "none",
+          "width": "100%",
+          "offsetBottom": "sm"
+        }
+      }
+    ]
+  }

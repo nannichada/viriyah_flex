@@ -1,0 +1,273 @@
+{
+    "type": "carousel",
+    "contents": [
+        {
+            "type": "bubble",
+            "size": "mega",
+            "hero": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://upload.convolab.ai/viriyah-dev%2F8b292a29-884b-4438-bf80-7c30aba37e22.png",
+                        "size": "240px",
+                        "aspectRatio": "10:4"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#FCAF17"
+                    }
+                ],
+                "height": "100px"
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "lg",
+                "action": {
+                    "type": "uri",
+                    "uri": "https://linecorp.com"
+                },
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "{headOffice.name}",
+                                "size": "14px",
+                                "color": "#616161",
+                                "weight": "bold",
+                                "style": "normal",
+                                "maxLines": 2,
+                                "wrap": true
+                            }
+                        ],
+                        "offsetStart": "md"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "spacing": "md",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "เวลาทำการ",
+                                                "flex": 0,
+                                                "size": "10px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "{headOffice.working_time}",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal",
+                                                "wrap": true,
+                                                "maxLines": 2
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "ที่อยู่สำนักงานใหญ่",
+                                                "flex": 0,
+                                                "size": "10px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "{headOffice.address}",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal",
+                                                "wrap": true,
+                                                "maxLines": 5
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "height": "150px",
+                        "offsetStart": "md"
+                    }
+                ],
+                "paddingTop": "xl"
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://upload.convolab.ai/viriyah-dev%2F6524b572-8fd7-4750-a2c7-880ae8a7d3e3.png",
+                                "offsetTop": "8px",
+                                "offsetStart": "70px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ดูข้อมูลที่อยู่",
+                                "size": "14px",
+                                "weight": "regular",
+                                "color": "#FFFFFF",
+                                "margin": "none",
+                                "align": "center",
+                                "gravity": "center",
+                                "style": "normal",
+                                "offsetTop": "5px",
+                                "action": {
+                                    "type": "flow",
+                                    "label": "ดูข้อมูลที่อยู่",
+                                    "flow": "@viriyah_head_office_map&contextName=registered_head_office&contextValue=ดูข้อมูลที่อยู่"
+                                }
+                            }
+                        ],
+                        "height": "36px",
+                        "backgroundColor": "#0033A2",
+                        "cornerRadius": "8px",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "margin": "md",
+                        "offsetStart": "xxl",
+                        "width": "240px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://upload.convolab.ai/viriyah-dev%2Fa6546140-420d-4d6c-b9f1-f9304120f415.png",
+                                "offsetTop": "8px",
+                                "offsetStart": "40px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "เบอร์โทรสำนักงานใหญ่",
+                                "size": "14px",
+                                "weight": "regular",
+                                "color": "#0033A2",
+                                "margin": "none",
+                                "align": "center",
+                                "gravity": "center",
+                                "style": "normal",
+                                "offsetTop": "5px",
+                                "action": {
+                                    "type": "message",
+                                    "message": "",
+                                    "is_bot_response": false
+                                }
+                            }
+                        ],
+                        "height": "36px",
+                        "cornerRadius": "8px",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "margin": "md",
+                        "offsetStart": "xxl",
+                        "borderColor": "#9E9E9E",
+                        "borderWidth": "1px",
+                        "width": "240px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://upload.convolab.ai/viriyah-dev%2Fa6546140-420d-4d6c-b9f1-f9304120f415.png",
+                                "offsetTop": "8px",
+                                "offsetStart": "60px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "สนใจซื้อประกัน",
+                                "size": "14px",
+                                "weight": "regular",
+                                "color": "#0033A2",
+                                "margin": "none",
+                                "align": "center",
+                                "gravity": "center",
+                                "style": "normal",
+                                "offsetTop": "5px",
+                                "action": {
+                                    "type": "message",
+                                    "message": "",
+                                    "is_bot_response": false
+                                }
+                            }
+                        ],
+                        "height": "36px",
+                        "cornerRadius": "8px",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "margin": "md",
+                        "offsetStart": "xxl",
+                        "borderColor": "#9E9E9E",
+                        "borderWidth": "1px",
+                        "width": "240px"
+                    }
+                ],
+                "flex": 0,
+                "height": "180px",
+                "margin": "24px"
+            }
+        }
+    ]
+}
+
+

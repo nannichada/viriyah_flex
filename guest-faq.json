@@ -1,0 +1,1001 @@
+{
+    "type": "carousel",
+    "contents": [
+        {
+            "type": "bubble",
+            "size": "giga",
+            "direction": "ltr",
+            "header": {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "คำถามที่พบบ่อยของประกันภัยรถยนต์",
+                        "size": "16px",
+                        "color": "#0033A2",
+                        "weight": "bold",
+                        "align": "center",
+                        "gravity": "center",
+                        "position": "relative",
+                        "adjustMode": "shrink-to-fit",
+                        "offsetTop": "7px"
+                    },
+                    {
+                        "type": "icon",
+                        "url": "https://upload.convolab.ai/viriyah-dev%2F27a97450-b7b9-4b45-aaa0-358d381a27bc.png",
+                        "offsetTop": "12px",
+                        "size": "lg"
+                    }
+                ],
+                "height": "80px",
+                "alignItems": "center",
+                "justifyContent": "space-between"
+            },
+            "hero": {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [],
+                "borderColor": "#FCAF17",
+                "height": "0.5px",
+                "offsetBottom": "none",
+                "margin": "none",
+                "backgroundColor": "#FCAF17"
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "1. เมื่อรถยนต์เกิดอุบัติเหตุควรทำอย่างไร",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "offsetTop": "5px",
+                                        "wrap": true,
+                                        "maxLines": 2
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "40px",
+                                "offsetTop": "5px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px"
+                            }
+                        ],
+                        "action": {
+                            "type": "flow",
+                            "label": "เมื่อรถยนต์เกิดอุบัติเหตุควรทำอย่างไร",
+                            "flow": "@guest_ans_0&contextName=guest_faq&contextValue=เมื่อรถยนต์เกิดอุบัติเหตุควรทำอย่างไร"
+                        },
+                        "spacing": "sm",
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "40px"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#F5F5F5"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "2. เกิดอุบัติเหตุเสียชีวิต พ.ร.บ. คุ้มครองอย่างไร",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "offsetTop": "5px",
+                                        "wrap": true,
+                                        "maxLines": 2
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "40px",
+                                "offsetTop": "5px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px"
+                            }
+                        ],
+                        "action": {
+                            "type": "flow",
+                            "label": "เกิดอุบัติเหตุเสียชีวิต พ.ร.บ. คุ้มครองอย่างไร",
+                            "flow": "@guest_how_act_protection&contextName=guest_faq&contextValue=เกิดอุบัติเหตุเสียชีวิต พ.ร.บ. คุ้มครองอย่างไร"
+                        },
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "40px"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#F5F5F5"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "3. รถยนต์ที่เกิดอุบัติเหตุพลิกคว่ำลงข้างทาง ทำประกันประเภท 2+ หรือ 3+ สามารถเรียกร้องค่าสินไหมทดแทนได้หรือไม่",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "offsetTop": "5px",
+                                        "wrap": true,
+                                        "maxLines": 5
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "70px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px",
+                                "offsetTop": "5px"
+                            }
+                        ],
+                        "action": {
+                            "type": "flow",
+                            "label": "รถยนต์ที่เกิดอุบัติเหตุพลิกคว่ำลงข้างทาง",
+                            "flow": "@guest_car_claim&contextName=guest_faq&contextValue=รถยนต์ที่เกิดอุบัติเหตุพลิกคว่ำลงข้างทาง ทำประกันประเภท 2+ หรือ 3+ สามารถเรียกร้องค่าสินไหมทดแทนได้หรือไม่"
+                        },
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "70px"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#F5F5F5"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "4. ค่าขาดประโยชน์จากการใช้รถคืออะไร",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "offsetTop": "5px",
+                                        "wrap": true,
+                                        "maxLines": 2
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "40px",
+                                "offsetTop": "5px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px"
+                            }
+                        ],
+                        "action": {
+                            "type": "flow",
+                            "label": "ค่าขาดประโยชน์จากการใช้รถคืออะไร",
+                            "flow": "@guest_car_unuseless&contextName=guest_faq&contextValue=ค่าขาดประโยชน์จากการใช้รถคืออะไร"
+                        },
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "40px"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#F5F5F5"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "5. เมื่อรถเกิดเหตุสามารถนำรถเข้าซ่อมที่ไหนได้บ้าง",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "offsetTop": "none",
+                                        "wrap": true,
+                                        "maxLines": 2
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "40px",
+                                "offsetTop": "5px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px"
+                            }
+                        ],
+                        "action": {
+                            "type": "flow",
+                            "label": "เมื่อรถเกิดเหตุสามารถนำรถเข้าซ่อมที่ไหนได้บ้าง",
+                            "flow": "@guest_car_where_fix&contextName=guest_faq&contextValue=เมื่อรถเกิดเหตุสามารถนำรถเข้าซ่อมที่ไหนได้บ้าง"
+                        },
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "40px"
+                    }
+                ],
+                "margin": "none",
+                "position": "relative",
+                "height": "280px"
+            }
+        }
+    ]
+}
+
+////////////////////////////////////////////////////////////////////////
+
+{
+    "type": "carousel",
+    "contents": [
+        {
+            "type": "bubble",
+            "size": "giga",
+            "direction": "ltr",
+            "header": {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "คำถามที่พบบ่อยของประกันภัยรถยนต์",
+                        "size": "16px",
+                        "color": "#0033A2",
+                        "weight": "bold",
+                        "align": "center",
+                        "gravity": "center",
+                        "position": "relative",
+                        "adjustMode": "shrink-to-fit",
+                        "offsetTop": "7px"
+                    },
+                    {
+                        "type": "icon",
+                        "url": "https://upload.convolab.ai/viriyah-dev%2F27a97450-b7b9-4b45-aaa0-358d381a27bc.png",
+                        "offsetTop": "12px",
+                        "size": "lg"
+                    }
+                ],
+                "height": "80px",
+                "alignItems": "center",
+                "justifyContent": "space-between"
+            },
+            "hero": {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [],
+                "borderColor": "#FCAF17",
+                "height": "0.5px",
+                "offsetBottom": "none",
+                "margin": "none",
+                "backgroundColor": "#FCAF17"
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "1. เมื่อรถยนต์เกิดอุบัติเหตุควรทำอย่างไร",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "offsetTop": "5px",
+                                        "wrap": true,
+                                        "maxLines": 2
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "40px",
+                                "offsetTop": "5px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px"
+                            }
+                        ],
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                        },
+                        "spacing": "sm",
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "40px"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#F5F5F5"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "2. เกิดอุบัติเหตุเสียชีวิต พ.ร.บ. คุ้มครองอย่างไร",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "offsetTop": "5px",
+                                        "wrap": true,
+                                        "maxLines": 2
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "40px",
+                                "offsetTop": "5px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px"
+                            }
+                        ],
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                          },
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "40px"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#F5F5F5"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "3. รถยนต์ที่เกิดอุบัติเหตุพลิกคว่ำลงข้างทาง ทำประกันประเภท 2+ หรือ 3+ สามารถเรียกร้องค่าสินไหมทดแทนได้หรือไม่",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "offsetTop": "5px",
+                                        "wrap": true,
+                                        "maxLines": 5
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "70px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px",
+                                "offsetTop": "5px"
+                            }
+                        ],
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                          },
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "70px"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#F5F5F5"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "4. ค่าขาดประโยชน์จากการใช้รถคืออะไร",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "offsetTop": "5px",
+                                        "wrap": true,
+                                        "maxLines": 2
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "40px",
+                                "offsetTop": "5px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px"
+                            }
+                        ],
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                          },
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "40px"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#F5F5F5"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "5. เมื่อรถเกิดเหตุสามารถนำรถเข้าซ่อมที่ไหนได้บ้าง",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "offsetTop": "none",
+                                        "wrap": true,
+                                        "maxLines": 2
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "40px",
+                                "offsetTop": "5px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px"
+                            }
+                        ],
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                          },
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "40px"
+                    }
+                ],
+                "margin": "none",
+                "position": "relative",
+                "height": "280px"
+            }
+        }
+    ]
+}
+
+
+/////////////////
+
+{
+    "type": "carousel",
+    "contents": [
+        {
+            "type": "bubble",
+            "size": "giga",
+            "direction": "ltr",
+            "header": {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "คำถามที่พบบ่อยของประกันภัยรถยนต์",
+                        "size": "16px",
+                        "color": "#0033A2",
+                        "weight": "bold",
+                        "align": "center",
+                        "gravity": "center",
+                        "position": "relative",
+                        "adjustMode": "shrink-to-fit",
+                        "offsetTop": "7px"
+                    },
+                    {
+                        "type": "icon",
+                        "url": "https://upload.convolab.ai/viriyah-dev%2F27a97450-b7b9-4b45-aaa0-358d381a27bc.png",
+                        "offsetTop": "12px",
+                        "size": "lg"
+                    }
+                ],
+                "height": "80px",
+                "alignItems": "center",
+                "justifyContent": "space-between"
+            },
+            "hero": {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [],
+                "borderColor": "#FCAF17",
+                "height": "0.5px",
+                "offsetBottom": "none",
+                "margin": "none",
+                "backgroundColor": "#FCAF17"
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "1. เมื่อรถยนต์เกิดอุบัติเหตุควรทำอย่างไร",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "wrap": true,
+                                        "maxLines": 2
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "40px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "sm"
+                                    }
+                                ],
+                                "width": "20px"
+                            }
+                        ],
+                        "action": {
+                            "type": "flow",
+                            "label": "เมื่อรถยนต์เกิดอุบัติเหตุควรทำอย่างไร",
+                            "flow": "@guest_ans_0&contextName=guest_faq&contextValue=เมื่อรถยนต์เกิดอุบัติเหตุควรทำอย่างไร"
+                        },
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "40px",
+                        "paddingAll": "none",
+                        "paddingTop": "md"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#F5F5F5"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "2. เกิดอุบัติเหตุเสียชีวิต พ.ร.บ. คุ้มครองอย่างไร",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "wrap": true,
+                                        "maxLines": 2,
+                                        "offsetTop": "7px"
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "40px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px"
+                            }
+                        ],
+                        "action": {
+                            "type": "flow",
+                            "label": "เกิดอุบัติเหตุเสียชีวิต พ.ร.บ. คุ้มครองอย่างไร",
+                            "flow": "@guest_how_act_protection&contextName=guest_faq&contextValue=เกิดอุบัติเหตุเสียชีวิต พ.ร.บ. คุ้มครองอย่างไร"
+                        },
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "40px"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#F5F5F5"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "3. รถยนต์ที่เกิดอุบัติเหตุพลิกคว่ำลงข้างทาง ทำประกันประเภท 2+ หรือ 3+ สามารถเรียกร้องค่าสินไหมทดแทนได้หรือไม่",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "offsetTop": "5px",
+                                        "wrap": true,
+                                        "maxLines": 5
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "75px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px",
+                                "offsetTop": "5px"
+                            }
+                        ],
+                        "action": {
+                            "type": "flow",
+                            "label": "รถยนต์ที่เกิดอุบัติเหตุพลิกคว่ำลงข้างทาง",
+                            "flow": "@guest_car_claim&contextName=guest_faq&contextValue=รถยนต์ที่เกิดอุบัติเหตุพลิกคว่ำลงข้างทาง ทำประกันประเภท 2+ หรือ 3+ สามารถเรียกร้องค่าสินไหมทดแทนได้หรือไม่"
+                        },
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "75px"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#F5F5F5"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "4. ค่าขาดประโยชน์จากการใช้รถคืออะไร",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "wrap": true,
+                                        "maxLines": 2,
+                                        "offsetTop": "3px"
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "40px",
+                                "offsetTop": "5px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px"
+                            }
+                        ],
+                        "action": {
+                            "type": "flow",
+                            "label": "ค่าขาดประโยชน์จากการใช้รถคืออะไร",
+                            "flow": "@guest_car_unuseless&contextName=guest_faq&contextValue=ค่าขาดประโยชน์จากการใช้รถคืออะไร"
+                        },
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "40px"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#F5F5F5"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "5. เมื่อรถเกิดเหตุสามารถนำรถเข้าซ่อมที่ไหนได้บ้าง",
+                                        "size": "14px",
+                                        "weight": "regular",
+                                        "color": "#0033A2",
+                                        "wrap": true,
+                                        "maxLines": 2,
+                                        "offsetTop": "7px"
+                                    }
+                                ],
+                                "offsetStart": "none",
+                                "paddingStart": "md",
+                                "height": "40px"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://upload.convolab.ai/viriyah-dev%2Fc45b0832-c5d9-4520-973b-45415bc8222e.jpg",
+                                        "size": "15px",
+                                        "aspectRatio": "1:1",
+                                        "offsetTop": "lg"
+                                    }
+                                ],
+                                "paddingStart": "none",
+                                "offsetEnd": "none",
+                                "width": "20px"
+                            }
+                        ],
+                        "action": {
+                            "type": "flow",
+                            "label": "เมื่อรถเกิดเหตุสามารถนำรถเข้าซ่อมที่ไหนได้บ้าง",
+                            "flow": "@guest_car_where_fix&contextName=guest_faq&contextValue=เมื่อรถเกิดเหตุสามารถนำรถเข้าซ่อมที่ไหนได้บ้าง"
+                        },
+                        "paddingAll": "none",
+                        "paddingStart": "none",
+                        "paddingEnd": "none",
+                        "offsetStart": "none",
+                        "height": "40px"
+                    }
+                ],
+                "margin": "none",
+                "position": "relative",
+                "height": "248px",
+                "paddingTop": "sm"
+            }
+        }
+    ]
+}

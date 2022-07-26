@@ -1,0 +1,310 @@
+{
+    "type": "carousel",
+    "contents": [
+        {
+            "type": "bubble",
+            "size": "mega",
+            "hero": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://upload.convolab.ai/viriyah-dev%2F8b292a29-884b-4438-bf80-7c30aba37e22.png",
+                        "size": "240px",
+                        "aspectRatio": "10:4"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#FCAF17"
+                    }
+                ],
+                "height": "100px"
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "lg",
+                "action": {
+                    "type": "uri",
+                    "uri": "https://linecorp.com"
+                },
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "บริษัท วิริยะประกันภัย จำกัด (มหาชน) สำนักงานใหญ่",
+                                "size": "14px",
+                                "color": "#616161",
+                                "weight": "bold",
+                                "style": "normal",
+                                "maxLines": 2,
+                                "wrap": true
+                            }
+                        ],
+                        "offsetStart": "md"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "spacing": "md",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "เวลาทำการ",
+                                                "flex": 0,
+                                                "size": "10px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "วันจันทร์-ศุกร์ ตั้งแต่เวลา 8.30 - 17.00 น. (หยุดเสาร์ อาทิตย์ และวันหยุดนักขัตฤกษ์) ",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal",
+                                                "wrap": true,
+                                                "maxLines": 2
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "ที่อยู่สำนักงานใหญ่",
+                                                "flex": 0,
+                                                "size": "10px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "บริษัท วิริยะประกันภัย จำกัด (มหาชน) 121/7, 121/14-23, 121/25-28, 121/104 ชั้น 2-6 อาคารอาร์ เอส ทาวเวอร์ ถนนรัชดาภิเษก  ดินแดง กรุงเทพฯ 10400 ",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal",
+                                                "wrap": true,
+                                                "maxLines": 5
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "Email",
+                                                "flex": 0,
+                                                "size": "10px",
+                                                "color": "#9E9E9E",
+                                                "style": "normal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "AH_CS@viriyah.co.th",
+                                                "size": "12px",
+                                                "align": "start",
+                                                "color": "#0033A2",
+                                                "style": "normal",
+                                                "wrap": true,
+                                                "maxLines": 2
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "height": "200px",
+                        "offsetStart": "md"
+                    }
+                ],
+                "paddingTop": "xl"
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://upload.convolab.ai/viriyah-dev%2F6524b572-8fd7-4750-a2c7-880ae8a7d3e3.png",
+                                "offsetTop": "8px",
+                                "offsetStart": "70px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ดูข้อมูลที่อยู่",
+                                "size": "14px",
+                                "weight": "regular",
+                                "color": "#FFFFFF",
+                                "margin": "none",
+                                "align": "center",
+                                "gravity": "center",
+                                "style": "normal",
+                                "offsetTop": "5px",
+                                "action": {
+                                    "type": "flow",
+                                    "label": "ดูข้อมูลที่อยู่",
+                                    "flow": "@viriyah_health_insurance_map&contextName=registered_health_office&contextValue=ดูข้อมูลที่อยู่"
+                                }
+                            }
+                        ],
+                        "height": "36px",
+                        "width": "240px",
+                        "backgroundColor": "#0033A2",
+                        "cornerRadius": "8px",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "margin": "md",
+                        "offsetStart": "xxl"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://upload.convolab.ai/viriyah-dev%2Fa6546140-420d-4d6c-b9f1-f9304120f415.png",
+                                "offsetTop": "8px",
+                                "offsetStart": "35px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "เบอร์โทรสำนักงานใหญ่",
+                                "size": "14px",
+                                "weight": "regular",
+                                "color": "#0033A2",
+                                "margin": "none",
+                                "align": "center",
+                                "gravity": "center",
+                                "style": "normal",
+                                "offsetTop": "5px",
+                                "action": {
+                                    "type": "phone",
+                                    "number": "+66 02 129 8888"
+                                }
+                            }
+                        ],
+                        "height": "36px",
+                        "width": "240px",
+                        "cornerRadius": "8px",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "margin": "md",
+                        "offsetStart": "xxl",
+                        "borderColor": "#9E9E9E",
+                        "borderWidth": "0.25px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://upload.convolab.ai/viriyah-dev%2F42498563-1739-47ac-8620-8c5ca3bc0b23.jpg",
+                                "offsetTop": "8px",
+                                "offsetStart": "60px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "สนใจซื้อประกัน",
+                                "size": "14px",
+                                "weight": "regular",
+                                "color": "#0033A2",
+                                "margin": "none",
+                                "align": "center",
+                                "gravity": "center",
+                                "style": "normal",
+                                "offsetTop": "5px",
+                                "action": {
+                                    "type": "flow",
+                                    "flow": "@buy_insurance_health&contextName=registered_health_office&contextValue=สนใจซื้อประกัน"
+                                }
+                            }
+                        ],
+                        "height": "36px",
+                        "width": "240px",
+                        "cornerRadius": "8px",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "margin": "md",
+                        "offsetStart": "xxl",
+                        "borderColor": "#9E9E9E",
+                        "borderWidth": "0.25px"
+                    }
+                ],
+                "flex": 0,
+                "height": "180px"
+            }
+        }
+    ]
+}
